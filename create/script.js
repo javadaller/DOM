@@ -5,7 +5,7 @@ function randomColor() {
 
 function createDiv(type,parent,content,className) {
     const newDiv=document.createElement(type);
-    if (type!='') {
+    if (content!=null) {
       newDiv.innerHTML=content;
     }
     if (className!=null) {
@@ -14,11 +14,6 @@ function createDiv(type,parent,content,className) {
     parent.appendChild(newDiv);
     return newDiv;
 }
-
-const article=document.querySelector('article');
-const section=createDiv('section',article,'Arnaud Van Acker');
-const color=randomColor();
-section.style.backgroundColor=color;
 
 function brightness(color) {
     const hex = color.replace('#', '');
@@ -29,9 +24,17 @@ function brightness(color) {
     return brightness > 155;
 }
 
-if(!brightness(color)) {
-    section.style.color='white';
-}
+const learners=['Arnaud','Julie','Caro'];
+const article=document.querySelector('article');
+
+learners.forEach(element => {
+    const section=createDiv('section',article,element);
+    const color=randomColor();
+    section.style.backgroundColor=color;
+    if(!brightness(color)) {
+        section.style.color='white';
+    }
+});
 
 const body=document.querySelector('body');
 const bodyArray=Array.from(body.children);
