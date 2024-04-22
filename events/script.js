@@ -1,4 +1,4 @@
-let color,timer = 0;
+let timer = 0;
 const log=document.querySelector('ul');
 const display=document.querySelector('.displayedsquare-wrapper');
 const squares=Array.from(document.querySelector('.actionsquare-wrapper').children);
@@ -6,7 +6,7 @@ const squares=Array.from(document.querySelector('.actionsquare-wrapper').childre
 //square click
 squares.forEach(square => {
     square.addEventListener('click', function() {
-        color=square.classList[1];
+        const color=square.classList[1];
         createSquare(color);
         createLog('['+(timer/1000).toFixed(2)+'s] Created a new '+color+' square');
         timer=0;
