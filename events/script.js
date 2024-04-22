@@ -9,7 +9,6 @@ squares.forEach(square => {
         const color=square.classList[1];
         createSquare(color);
         createLog('['+(timer/1000).toFixed(2)+'s] Created a new '+color+' square');
-        timer=0;
     })
 });
 
@@ -28,7 +27,6 @@ document.addEventListener('keyup', function(event) {
     if (event.key === ' ') {
       document.body.style.backgroundColor = randomColor();
       createLog('['+(timer/1000).toFixed(2)+'s] Created a new background color');
-      timer=0;
     }
 });
 
@@ -60,6 +58,7 @@ function createLog(content) {
     const newDiv=document.createElement('li');
     newDiv.innerHTML=content;
     log.appendChild(newDiv);
+    timer=0;
 }
 
 function sleep(ms) {
