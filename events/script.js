@@ -12,6 +12,7 @@ squares.forEach(square => {
     })
 });
 
+//keyboard
 document.addEventListener('keyup', function(event) {
     //delete square
     if (event.key === 's') {
