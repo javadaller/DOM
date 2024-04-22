@@ -12,31 +12,25 @@ squares.forEach(square => {
     })
 });
 
-//delete square
 document.addEventListener('keyup', function(event) {
+    //delete square
     if (event.key === 's') {
-      const displayChildren = Array.from(display.children);
-      displayChildren.forEach(square => {
-        square.remove();
-      });
-    }
-});
+        const displayChildren = Array.from(display.children);
+        displayChildren.forEach(square => {
+            square.remove();
+        });
 
-//change body color
-document.addEventListener('keyup', function(event) {
-    if (event.key === ' ') {
-      document.body.style.backgroundColor = randomColor();
-      createLog('['+(timer/1000).toFixed(2)+'s] Created a new background color');
-    }
-});
+    //change body color    
+    } else if (event.key === ' ') {
+        document.body.style.backgroundColor = randomColor();
+        createLog('['+(timer/1000).toFixed(2)+'s] Created a new background color');
 
-//delete log
-document.addEventListener('keyup', function(event) {
-    if (event.key === 'l') {
-      const ulChildren = Array.from(document.querySelector('ul').children);
-      ulChildren.forEach(li => {
-        li.remove();
-      });
+    //delete log    
+    } else if (event.key === 'l') {
+        const ulChildren = Array.from(document.querySelector('ul').children);
+        ulChildren.forEach(li => {
+            li.remove();
+        });
     }
 });
 
