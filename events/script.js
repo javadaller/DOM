@@ -1,5 +1,4 @@
 let color,timer = 0;
-const body=document.querySelector('body');
 const log=document.querySelector('ul');
 const display=document.querySelector('.displayedsquare-wrapper');
 const squares=Array.from(document.querySelector('.actionsquare-wrapper').children);

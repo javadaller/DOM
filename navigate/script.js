@@ -3,8 +3,6 @@ const olLastChild = document.querySelector('ol li:last-child');
 
 ol.insertBefore(olLastChild,ol.firstChild);
 
-
-
 const h2A=document.querySelectorAll('h2')[1];
 const h2B=document.querySelectorAll('h2')[2];
 
