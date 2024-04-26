@@ -21,26 +21,25 @@ function brightness(color) {
     const c_g = parseInt(hex.substr(2, 2), 16);
     const c_b = parseInt(hex.substr(4, 2), 16);
     const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
-    return brightness > 155;
+
+    return brightness > 150;
 }
 
-const learners=['Arnaud','Julie','Caro'];
+const learners=["Adrien B.", "Adrien C.", "Angel", "Arnaud", "Caroline", "Denis", "Dorian", "Dylan", "Dzheylyan", "Giovanni", "Isabelle", "Jessica", "Jordan", "Julie", "Justine", "Iliess", "Ludovic", "Lyne", "Manu", "Maryann", "Mohamed", "Natalia", "Nathanael", "Stacy", "Tom", "Youris", "Zahra"];
 const article=document.querySelector('article');
 
-learners.forEach(element => {
-    const section=createDiv('section',article,element);
-    const color=randomColor();
-    section.style.backgroundColor=color;
-    if(!brightness(color)) {
-        section.style.color='white';
-    }
-});
+learners.sort(() => Math.random() - 0.5);
 
-const body=document.querySelector('body');
-const bodyArray=Array.from(body.children);
+function test() {
+  for(let i=0; i<learners.length; i++) {
+    const section=createDiv('section',article,learners[i]);
+      const color=randomColor();
+      section.style.backgroundColor=color;
+      if(!brightness(color)) {
+          section.style.color='white';
+      }
+  }
+}
 
-bodyArray.sort(() => Math.random() - 0.5); 
- 
-bodyArray.forEach(div => { 
-  body.appendChild(div); 
-});
+test();
+
